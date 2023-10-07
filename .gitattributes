@@ -1,2 +1,2 @@
-*.java linguist-detectable=false
-*.ruby linguist-detectable=false
+* linguist-vendored
+*.ts linguist-vendored=false
