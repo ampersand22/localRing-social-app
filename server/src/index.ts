@@ -1,16 +1,18 @@
-import { PrismaClient } from '@prisma/client'
+import { ApolloServer } from "@apollo/server";
+import { startStandaloneServer } from "@apollo/server/standalone";
 
-const prisma = new PrismaClient()
+// The ApolloServer constructor requires two parameters: your schema
+// definition and your set of resolvers.
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
-async function main() {
-  // ... you will write your Prisma Client queries here
-}
+const startServer = () => {
+  const { url } = await startStandaloneServer(server, {
+    listen: { port: 4000 },
+  });
+  console.log(`🚀  Server ready at: ${url}`);
+};
 
-main()
-  .catch(async (e) => {
-    console.error(e)
-    process.exit(1)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })
+startServer();
