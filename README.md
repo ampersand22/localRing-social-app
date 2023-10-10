@@ -1,5 +1,5 @@
 
-localRing - Expo/GraphQL/MongoDB/Prisma
+localRing - React-Native/Expo/GraphQL/MongoDB/Prisma
 
 Using older localChat repo and expanding upon that.
 
